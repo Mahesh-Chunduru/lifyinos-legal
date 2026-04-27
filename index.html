@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lifyinos — Your Personal Life OS</title>
+  <meta name="description" content="Lifyinos is a calm, minimal personal life operating system. Track tasks, goals, habits, and reflections across all areas of life — without the guilt.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+    a { color: #4f46e5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+    }
+    .hero .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-weight: 800;
+      margin-top: 0.6rem;
+      line-height: 1.15;
+    }
+    .hero .tagline {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-top: 1rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .description {
+      font-size: 0.95rem;
+      opacity: 0.75;
+      margin-top: 0.75rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .cta {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.85rem 2rem;
+      background: #fff;
+      color: #4f46e5;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .hero .cta:hover { background: #eef2ff; text-decoration: none; }
+
+    /* ── Sections ── */
+    .section { padding: 3.5rem 1.5rem; }
+    .section-inner { max-width: 860px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #111827;
+      text-align: center;
+      margin-bottom: 0.4rem;
+    }
+    .section-sub {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Pillars grid ── */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .pillar {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.1rem 0.75rem;
+      text-align: center;
+    }
+    .pillar .emoji { font-size: 1.6rem; display: block; margin-bottom: 0.4rem; }
+    .pillar .name { font-size: 0.8rem; font-weight: 600; color: #374151; line-height: 1.3; }
+
+    /* ── Features grid ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+    .feature {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 1.5rem 1.25rem;
+    }
+    .feature .icon { font-size: 1.8rem; margin-bottom: 0.75rem; display: block; }
+    .feature h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 0.4rem; }
+    .feature p { font-size: 0.875rem; color: #6b7280; line-height: 1.5; }
+
+    /* ── Philosophy strip ── */
+    .philosophy {
+      background: #eef2ff;
+      border-top: 1px solid #c7d2fe;
+      border-bottom: 1px solid #c7d2fe;
+    }
+    .philosophy .section-inner { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+    .principle { text-align: center; max-width: 200px; }
+    .principle .label { font-size: 0.95rem; font-weight: 700; color: #4f46e5; }
+    .principle .desc { font-size: 0.85rem; color: #374151; margin-top: 0.2rem; }
+
+    /* ── App Store ── */
+    .appstore { text-align: center; }
+    .appstore p { color: #6b7280; font-size: 0.9rem; margin-top: 1rem; }
+    .store-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.9rem 2.2rem;
+      background: #111827;
+      color: #fff;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .store-btn:hover { background: #1f2937; text-decoration: none; }
+    .store-btn .sub { display: block; font-size: 0.7rem; font-weight: 400; opacity: 0.7; margin-bottom: 0.1rem; }
+
+    /* ── Footer ── */
+    footer {
+      background: #f3f4f6;
+      border-top: 1px solid #e5e7eb;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+    footer .footer-links { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    footer .footer-links a { color: #6b7280; font-size: 0.85rem; }
+    footer .footer-links a:hover { color: #4f46e5; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="brand">Lifyinos</div>
+    <h1>Your Personal<br>Life OS</h1>
+    <p class="tagline">Calm. Minimal. Non-judgmental.</p>
+    <p class="description">Unify your tasks, goals, reflections, and health across all areas of life — without the guilt, without the overwhelm.</p>
+    <a href="#appstore" class="cta">Download on the App Store</a>
+  </div>
+
+  <!-- Life Pillars -->
+  <div class="section">
+    <div class="section-inner">
+      <div class="section-title">10 Life Pillars</div>
+      <div class="section-sub">Everything that matters, in one place.</div>
+      <div class="pillars">
+        <div class="pillar"><span class="emoji">🏃</span><span class="name">Health &amp; Fitness</span></div>
+        <div class="pillar"><span class="emoji">💼</span><span class="name">Career / Work</span></div>
+        <div class="pillar"><span class="emoji">📚</span><span class="name">Learning &amp; Education</span></div>
+        <div class="pillar"><span class="emoji">🌱</span><span class="name">Personal Growth</span></div>
+        <div class="pillar"><span class="emoji">💰</span><span class="name">Finances</span></div>
+        <div class="pillar"><span class="emoji">❤️</span><span class="name">Relationships</span></div>
+        <div class="pillar"><span class="emoji">🧘</span><span class="name">Mental Wellness</span></div>
+        <div class="pillar"><span class="emoji">🎨</span><span class="name">Hobbies &amp; Creativity</span></div>
+        <div class="pillar"><span class="emoji">🚀</span><span class="name">Side Projects</span></div>
+        <div class="pillar"><span class="emoji">✈️</span><span class="name">Travel &amp; Experiences</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Philosophy -->
+  <div class="section philosophy">
+    <div class="section-inner">
+      <div class="principle">
+        <div class="label">Clarity over complexity</div>
+        <div class="desc">Simple views, no clutter.</div>
+      </div>
+      <div class="principle">
+        <div class="label">Balance over hustle</div>
+        <div class="desc">All areas of life matter.</div>
+      </div>
+      <div class="principle">
+        <div class="label">Progress is celebrated</div>
+        <div class="desc">Partial wins count too.</div>
+      </div>
+      <div class="principle">
+        <div class="label">Never guilt-inducing</div>
+        <div class="desc">Supportive, always.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Features -->
+  <div class="section" style="background: #fff;">
+    <div class="section-inner">
+      <div class="section-title">What You Can Do</div>
+      <div class="section-sub">A complete toolkit for your everyday life.</div>
+      <div class="features">
+        <div class="feature">
+          <span class="icon">🎙️</span>
+          <h3>Voice Journal</h3>
+          <p>Speak your day naturally. Lifyinos automatically breaks your speech into tasks and maps them to the right life pillar.</p>
+        </div>
+        <div class="feature">
+          <span class="icon">✨</span>
+          <h3>AI Insights</h3>
+          <p>Weekly and monthly reflections generated by AI — spot patterns, celebrate wins, and stay aware of where your energy goes.</p>
+        </div>
+        <div class="feature">
+          <span class="icon">📊</span>
+          <h3>Life Balance View</h3>
+          <p>A visual radar showing how you're spending your time across all 10 life pillars. Balance, not just productivity.</p>
+        </div>
+        <div class="feature">
+          <span class="icon">❤️</span>
+          <h3>Health Sync</h3>
+          <p>Connects with Apple Health to automatically log your steps, workouts, and sleep — no manual entry needed.</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🌙</span>
+          <h3>Tomorrow Planning</h3>
+          <p>Each evening, get a gentle prompt to set your intentions for tomorrow. Carry forward what matters, let go of what doesn't.</p>
+        </div>
+        <div class="feature">
+          <span class="icon">👥</span>
+          <h3>Inner Circle</h3>
+          <p>Share your daily progress with the people who matter — privately. React and encourage each other.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Store -->
+  <div class="section appstore" id="appstore">
+    <div class="section-inner">
+      <div class="section-title">Available on iPhone</div>
+      <a href="https://apps.apple.com/app/lifyinos" class="store-btn">
+        <span class="sub">Download on the</span>
+        App Store
+      </a>
+      <p>Requires iOS 16 or later. Free to download.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:contactus@lifyinos.com">contactus@lifyinos.com</a>
+    </div>
+    <p>&copy; 2026 Lifyinos. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
