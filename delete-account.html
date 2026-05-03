@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Your Account — Lifyinos</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 720px; margin: 0 auto; }
+    header { margin-bottom: 2.5rem; }
+    .brand { font-size: 1.1rem; font-weight: 700; color: #4f46e5; letter-spacing: 0.05em; text-transform: uppercase; }
+    h1 { font-size: 2rem; font-weight: 800; margin-top: 0.5rem; color: #111827; }
+    .subtitle { font-size: 1rem; color: #6b7280; margin-top: 0.5rem; }
+    section { margin-top: 2.5rem; }
+    h2 { font-size: 1.15rem; font-weight: 700; color: #111827; margin-bottom: 0.75rem; }
+    p { color: #374151; font-size: 0.95rem; margin-bottom: 0.75rem; }
+    ul { padding-left: 1.5rem; color: #374151; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+
+    /* Steps */
+    .steps { list-style: none; padding: 0; counter-reset: step; }
+    .steps li {
+      counter-increment: step;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+    .steps li::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      background: #4f46e5;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .steps li strong { color: #111827; }
+
+    /* Checklist */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+    .checklist li::before {
+      content: "✓";
+      flex-shrink: 0;
+      color: #10b981;
+      font-weight: 700;
+      margin-top: 0.05rem;
+    }
+
+    /* Callout box */
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #4f46e5;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      color: #1e40af;
+    }
+    .callout strong { color: #1e3a8a; }
+
+    /* Email card */
+    .email-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1.25rem;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+    .email-card a {
+      color: #4f46e5;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .email-card a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+    footer a { color: #4f46e5; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="brand">Lifyinos</div>
+      <h1>Delete Your Account</h1>
+      <p class="subtitle">How to permanently remove your account and all associated data from Lifyinos.</p>
+    </header>
+
+    <section>
+      <h2>How to Delete Your Account in the App</h2>
+      <p>You can delete your account directly inside the Lifyinos app in a few steps. No email or web form is required.</p>
+      <ol class="steps">
+        <li><span>Open the app and go to the <strong>Profile</strong> tab (bottom-right).</span></li>
+        <li><span>Tap <strong>Settings</strong>.</span></li>
+        <li><span>Scroll to the bottom and tap <strong>Delete Account</strong>.</span></li>
+        <li><span>Select a reason for leaving (required), then tap <strong>Delete My Account</strong>.</span></li>
+        <li><span>Confirm the deletion in the dialog that appears.</span></li>
+        <li><span>A 6-digit verification code will be sent to your registered email address. Enter it to confirm your identity.</span></li>
+        <li><span>Your account is permanently deleted. You will be signed out automatically.</span></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>What Data Is Deleted</h2>
+      <p>Deleting your account permanently removes all of the following data from Lifyinos:</p>
+      <ul class="checklist">
+        <li>Your profile (name, email address, phone number)</li>
+        <li>All tasks, goals, and daily logs you have created</li>
+        <li>Voice input transcripts and daily journal entries</li>
+        <li>Health data synced from HealthKit or Health Connect (steps, workouts, sleep)</li>
+        <li>AI-generated insights and day summaries</li>
+        <li>Inner Circle connections, reactions, and comments</li>
+        <li>All account preferences and settings</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data Retention</h2>
+      <div class="callout">
+        <strong>Your account and data are deleted immediately</strong> when you complete the verification step. Any residual copies in encrypted system backups are fully purged within <strong>30 days</strong>.
+      </div>
+    </section>
+
+    <section>
+      <h2>Can't Access the App? Request Deletion by Email</h2>
+      <p>If you are unable to sign in to the app and need your account deleted, contact us and we will process your request manually within 7 business days.</p>
+      <div class="email-card">
+        Send your deletion request to: <a href="mailto:maheshchunduru79@gmail.com">maheshchunduru79@gmail.com</a><br><br>
+        Please include the email address associated with your Lifyinos account so we can locate and delete it.
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Lifyinos. &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
